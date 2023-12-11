@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_nav"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.ownlab.ownlab_client.view.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+
+        <action
+            android:id="@+id/login_2_main"
+            app:destination="@id/main_nav"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <include app:graph="@navigation/main_nav" />
+
+    <action
+        android:id="@+id/main_2_login"
+        app:destination="@id/loginFragment"
+        app:popUpToInclusive="true" />
+
+</navigation>
